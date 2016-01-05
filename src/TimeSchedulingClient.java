@@ -1,3 +1,7 @@
+/*
+ * TimeSchedulingClient.java
+ * クライアント(EV3)側の時間をスケジューリングするクラス．
+ */
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
