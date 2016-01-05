@@ -24,7 +24,7 @@ public class SocketClient {
 	//private static final int TimeoutTime = 10;
 
     //ƒƒ\ƒbƒh
-    public static void main(String arg[]){
+    public void ConnectClient(String arg[]){
     	try{
 			socket = new Socket( PCIPAddress ,  port); //Ú‘±
 			Is = socket.getInputStream();
