@@ -2,6 +2,7 @@
  * SocketClient.java
  * クライアントクラス．EV3から送信するPC側のサーバーへ通信する
  */
+//インポート
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.InputStream;
@@ -9,17 +10,20 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
+//クラスの定義
 public class SocketClient {
-	static Socket socket;//ソケット
-	static int port=10000;
-	static DataOutputStream dos;
-    static DataInputStream dis;
-    static String PCIPAddress="192.168.1.7";//
-    static InetAddress addr;
-    static InputStream Is;
-    static OutputStream Os;
+	//変数
+	static Socket socket; //ソケット
+	static int port=10000; //ポート番号
+	static DataOutputStream dos; //データ出力ストリーム
+    static DataInputStream dis; //データ入力ストリーム
+    static String PCIPAddress="192.168.1.7"; //PCのIPアドレス
+    static InetAddress addr; //IPアドレス
+    static InputStream Is; //入力ストリーム
+    static OutputStream Os; //出力ストリーム
 	//private static final int TimeoutTime = 10;
 
+    //メソッド
     public static void main(String arg[]){
     	try{
 			socket = new Socket( PCIPAddress ,  port); //接続
