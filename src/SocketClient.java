@@ -34,11 +34,11 @@ public class SocketClient {
 			dis = new DataInputStream(Is);
 			Os = socket.getOutputStream();
 			dos = new DataOutputStream(Os);
-			System.out.println("socket");
 			
 			velocity = dis.readDouble();
-			//yaw = dis.readDouble();
-			System.out.println("Velocity => " + velocity/* + " , Yaw => " + yaw*/);
+			yaw = dis.readDouble();
+			dis.close();
+			System.out.println("Velocity => " + velocity + " , Yaw => " + yaw);
 		}catch(Exception e) {
 			System.out.println("SC_Exception: " + e);
 		}
