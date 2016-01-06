@@ -26,12 +26,19 @@ public class SocketClient {
     //ƒƒ\ƒbƒh
     public void ConnectClient(String arg[]){
     	try{
+    		double velocity;
+    		double yaw;
+    		
 			socket = new Socket( PCIPAddress ,  port); //Ú‘±
 			Is = socket.getInputStream();
 			dis = new DataInputStream(Is);
 			Os = socket.getOutputStream();
 			dos = new DataOutputStream(Os);
 			System.out.println("socket");
+			
+			velocity = dis.readDouble();
+			//yaw = dis.readDouble();
+			System.out.println("Velocity => " + velocity/* + " , Yaw => " + yaw*/);
 		}catch(Exception e) {
 			System.out.println("SC_Exception: " + e);
 		}
