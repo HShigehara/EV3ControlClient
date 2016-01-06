@@ -21,7 +21,6 @@ public class SocketClient {
     static InetAddress addr; //IPアドレス
     static InputStream Is; //入力ストリーム
     static OutputStream Os; //出力ストリーム
-	//private static final int TimeoutTime = 10;
 
     //メソッド
     public void ConnectClient(String arg[]){
@@ -35,10 +34,12 @@ public class SocketClient {
 			Os = socket.getOutputStream();
 			dos = new DataOutputStream(Os);
 			
-			velocity = dis.readDouble();
-			yaw = dis.readDouble();
-			dis.close();
+			//データの受信
+			velocity = dis.readDouble(); //速度を受信
+			yaw = dis.readDouble(); //ヨー角を受信
+			//dis.close();
 			System.out.println("Velocity => " + velocity + " , Yaw => " + yaw);
+			
 		}catch(Exception e) {
 			System.out.println("SC_Exception: " + e);
 		}

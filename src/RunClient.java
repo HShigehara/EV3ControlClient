@@ -12,6 +12,8 @@ public class RunClient extends TimerTask{
     private long timeStart;
     private String id;
 
+   	static SocketClient sc = new SocketClient(); //インスタンスを生成
+   	
     //メソッド
     //コンストラクタ
     RunClient(String arg){
@@ -25,7 +27,6 @@ public class RunClient extends TimerTask{
     	System.out.println(id +  " : " + TimeUnit.MILLISECONDS.convert(timeNow, TimeUnit.NANOSECONDS));
     	
     	//ソケット通信
-    	SocketClient socket_client = new SocketClient(); //インスタンスを生成
-    	socket_client.ConnectClient(null); //ソケット接続
+    	sc.ConnectClient(null); //ソケット接続
     }
 }
