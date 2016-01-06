@@ -27,6 +27,6 @@ public class RunClient extends TimerTask{
     	System.out.println(id +  " : " + TimeUnit.MILLISECONDS.convert(timeNow, TimeUnit.NANOSECONDS));
     	
     	//ソケット通信
-    	sc.ConnectClient(null); //ソケット接続
+    	sc.ReceiveData(null); //ソケット接続
     }
 }

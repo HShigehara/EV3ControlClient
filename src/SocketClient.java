@@ -22,24 +22,37 @@ public class SocketClient {
     static InputStream Is; //入力ストリーム
     static OutputStream Os; //出力ストリーム
 
-    //メソッド
-    public void ConnectClient(String arg[]){
+    
+	//メソッド
+    //コネクションをはるメソッド
+    public void MakeConnection(String args[]){
     	try{
-    		double velocity;
-    		double yaw;
-    		
-			socket = new Socket( PCIPAddress ,  port); //接続
-			Is = socket.getInputStream();
+    		socket = new Socket(PCIPAddress, port);
+    		Is = socket.getInputStream();
 			dis = new DataInputStream(Is);
 			Os = socket.getOutputStream();
 			dos = new DataOutputStream(Os);
-			
+    	}catch(Exception e){
+    		System.out.println(e);
+    	}
+    }
+    
+    //データを受信するメソッド
+    public void ReceiveData(String arg[]){
+   		double velocity;
+   		double yaw;
+   		RunEV3 rev3 = new RunEV3();
+    	try{
 			//データの受信
-			velocity = dis.readDouble(); //速度を受信
+			//Is = socket.getInputStream();
+			//dis = new DataInputStream(Is);
+    		velocity = dis.readDouble(); //速度を受信
 			yaw = dis.readDouble(); //ヨー角を受信
 			//dis.close();
 			System.out.println("Velocity => " + velocity + " , Yaw => " + yaw);
 			
+			//EV3の走行プログラムに移行
+			rev3.ControlEV3(velocity, yaw);
 		}catch(Exception e) {
 			System.out.println("SC_Exception: " + e);
 		}

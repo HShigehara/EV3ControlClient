@@ -11,11 +11,15 @@ public class EV3ControlClient{
     public static void main(String[] args){
     	Timer timer = new Timer(); //タイマーt2のインスタンスを生成
 
+    	//連続処理を行う前にコネクションをはる
+    	SocketClient sc = new SocketClient();
+    	sc.MakeConnection(null);
+    	
     	//(~, 開始, 増分)
-    	timer.scheduleAtFixedRate(new RunClient("Time Scheduling Client"), 1000, 100); //scheduleAtFixedRateメソッドを利用時
+    	timer.scheduleAtFixedRate(new RunClient("Time Scheduling Client"), 1000, 5000); //scheduleAtFixedRateメソッドを利用時
 
     	try{ //通常時
-    		Thread.sleep(100); //5000[ms]だけ待って動作を開始
+    		Thread.sleep(5000); //5000[ms]だけ待って動作を開始
     	} catch(InterruptedException e){ //例外発生時
     		System.out.println("error : " + e); //エラーを表示
     	}
