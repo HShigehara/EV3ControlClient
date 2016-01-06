@@ -19,9 +19,9 @@ public class EV3ControlClient{
 	t2.scheduleAtFixedRate(new RunClient("Time Scheduling Client"), 1000, 100); //scheduleAtFixedRateメソッドを利用時
 
 	try{ //通常時
-		while(flag == 0){
+		//while(flag == 0){
 			Thread.sleep(5000); //5000[ms]だけ待って動作を開始
-		}
+		//}
 	} catch(InterruptedException e){ //例外発生時
 	    System.out.println("error : " + e); //エラーを表示
 	}

@@ -22,7 +22,7 @@ public class RunClient extends TimerTask{
     //run()．処理の流れをここに書く
     public void run(){
     	long timeNow = System.nanoTime() - timeStart;
-    	System.out.println(id +  " : " + TimeUnit.MILLISECONDS.convert(timeNow, TimeUnit.NANOSECONDS));
+    	//System.out.println(id +  " : " + TimeUnit.MILLISECONDS.convert(timeNow, TimeUnit.NANOSECONDS));
     	
     	//ソケット通信
     	SocketClient socket_client = new SocketClient(); //インスタンスを生成
