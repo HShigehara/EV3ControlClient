@@ -14,47 +14,41 @@ import java.net.Socket;
 public class SocketClient {
 	//変数
 	static Socket socket; //ソケット
-	static int port=10000; //ポート番号
+	static int port = 10000; //ポート番号
 	static DataOutputStream dos; //データ出力ストリーム
     static DataInputStream dis; //データ入力ストリーム
-    static String PCIPAddress="192.168.1.7"; //PCのIPアドレス
+    static String PCIPAddress = "192.168.1.7"; //PCのIPアドレス
     static InetAddress addr; //IPアドレス
     static InputStream Is; //入力ストリーム
     static OutputStream Os; //出力ストリーム
-
     
-	//メソッド
+    public double velocity;
+   	public double yaw;
+   	
+   	//メソッド
     //コネクションをはるメソッド
     public void MakeConnection(String args[]){
     	try{
+    		System.out.println("Starting Client...");
     		socket = new Socket(PCIPAddress, port);
     		Is = socket.getInputStream();
 			dis = new DataInputStream(Is);
 			Os = socket.getOutputStream();
 			dos = new DataOutputStream(Os);
     	}catch(Exception e){
-    		System.out.println(e);
+    		System.out.println("SC_Exception" + e);
     	}
     }
     
     //データを受信するメソッド
     public void ReceiveData(String arg[]){
-   		double velocity;
-   		double yaw;
-   		RunEV3 rev3 = new RunEV3();
     	try{
 			//データの受信
-			//Is = socket.getInputStream();
-			//dis = new DataInputStream(Is);
     		velocity = dis.readDouble(); //速度を受信
 			yaw = dis.readDouble(); //ヨー角を受信
-			//dis.close();
-			System.out.println("Velocity => " + velocity + " , Yaw => " + yaw);
-			
-			//EV3の走行プログラムに移行
-			rev3.ControlEV3(velocity, yaw);
+			//System.out.println("Velocity => " + velocity + " , Yaw => " + yaw);
 		}catch(Exception e) {
-			System.out.println("SC_Exception: " + e);
+			System.out.println("IOException: " + e);
 		}
 	}
 }
