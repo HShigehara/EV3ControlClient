@@ -12,9 +12,13 @@ public class EV3ControlClient{
     	Timer timer = new Timer(); //タイマーtimerのインスタンスを生成
 
     	//連続処理を行う前にコネクションをはる
-    	SocketClient sc = new SocketClient();
-    	sc.MakeConnection(null);
-    	    	
+    	//SocketClient sc = new SocketClient();
+    	//sc.MakeConnection(null);
+    	SocketClient.MakeConnection(null); 
+    	
+    	//1回目の処理のフラグを設定
+    	RunControlEV3.flag_once = false; //1回目なのでフラグをfalseにしておく
+    	
     	//(~, 開始, 増分)
     	timer.scheduleAtFixedRate(new RunClient(), 1000, 100); //scheduleAtFixedRateメソッドを利用時
 

@@ -33,13 +33,13 @@ public class RunClient extends TimerTask{
     	//System.out.println(TimeUnit.MILLISECONDS.convert(timeNow, TimeUnit.NANOSECONDS) + " " + rcev3.ua_current + " " + rcev3.ub_current + " " + rcev3.ua_real + " " + rcev3.ub_real); //確認用に表示
     	
     	//ファイルに書き込む
-   		File file = new File("u.dat");
-    	try{
-    		FileWriter filewriter = new FileWriter(file, true); //追記モード
-    		filewriter.write(TimeUnit.MILLISECONDS.convert(timeNow, TimeUnit.NANOSECONDS) + " " + rcev3.ul + " " + rcev3.ur + " " + rcev3.ul_real + " " + rcev3.ur_real + "\n"); //確認用に表示
-    		filewriter.close();
-    	} catch(IOException e){
-    		System.out.println("error : " + e);
-    	}
+   		//File file = new File("u.dat");
+    	//try{
+    	//	FileWriter filewriter = new FileWriter(file, true); //追記モード
+    	//	filewriter.write(TimeUnit.MILLISECONDS.convert(timeNow, TimeUnit.NANOSECONDS) + " " + rcev3.ul + " " + rcev3.ur + " " + rcev3.ul_real + " " + rcev3.ur_real + "\n"); //確認用に表示
+    	//	filewriter.close();
+    	//} catch(IOException e){
+    	//	System.out.println("error : " + e);
+    	//}
     }
 }

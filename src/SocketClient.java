@@ -10,6 +10,8 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
+import lejos.utility.Delay;
+
 //クラスの定義
 public class SocketClient {
 	//変数
@@ -27,7 +29,7 @@ public class SocketClient {
    	
    	//メソッド
     //コネクションをはるメソッド
-    public void MakeConnection(String args[]){
+    static void MakeConnection(String args[]){
     	try{
     		System.out.println("Starting Client...");
     		socket = new Socket(PCIPAddress, port);
@@ -46,9 +48,10 @@ public class SocketClient {
 			//データの受信
     		velocity = dis.readDouble(); //速度を受信
 			yaw = dis.readDouble(); //ヨー角を受信
-			//System.out.println("Velocity => " + velocity + " , Yaw => " + yaw);
+			System.out.println("Velocity => " + velocity + " , Yaw => " + yaw);
 		}catch(Exception e) {
 			System.out.println("IOException: " + e);
+			System.exit(-1);
 		}
 	}
 }
