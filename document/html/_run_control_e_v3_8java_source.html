@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>EV3ControlClient: RunControlEV3.java ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">EV3ControlClient
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>総合概要</span></a></li>
+      <li><a href="annotated.html"><span>クラス</span></a></li>
+      <li class="current"><a href="files.html"><span>ファイル</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>ファイル一覧</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_run_control_e_v3_8java_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>変数</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">RunControlEV3.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_run_control_e_v3_8java.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">import</span> lejos.hardware.motor.Motor; <span class="comment">//モーターの設定</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//import lejos.hardware.port.SensorPort; //センサーポートの設定</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//import lejos.hardware.sensor.EV3UltrasonicSensor; //超音波センサーの設定</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//import java.io.*;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> java.lang.Math;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//クラスの定義</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_run_control_e_v3.html">   20</a></span>&#160;<span class="comment"></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_run_control_e_v3.html">RunControlEV3</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">//変数</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_run_control_e_v3.html#a31adcc7284b47f38641a8e735c651ac7">   22</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_run_control_e_v3.html#a31adcc7284b47f38641a8e735c651ac7">ul</a>; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_run_control_e_v3.html#ae74b60d3e2a26e4982778d8c2bf37aee">   23</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_run_control_e_v3.html#ae74b60d3e2a26e4982778d8c2bf37aee">ur</a>; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_run_control_e_v3.html#abf9d83adb525b4201e389d54b9db1522">   24</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_run_control_e_v3.html#abf9d83adb525b4201e389d54b9db1522">ul_real</a>; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_run_control_e_v3.html#a67525ab959466f99029c7d8659d2f5e4">   25</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_run_control_e_v3.html#a67525ab959466f99029c7d8659d2f5e4">ur_real</a>; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//入力値を計算するための変数</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_run_control_e_v3.html#aa497a02d040094b3a73ebaee31469f54">   28</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">boolean</span> <a class="code" href="class_run_control_e_v3.html#aa497a02d040094b3a73ebaee31469f54">flag_once</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">double</span> r; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> vref_l; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> vref_r; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">double</span> yawref; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">double</span> kp_l, ki_l, kd_l, kyaw_l; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">double</span> kp_r, ki_r, kd_r, kyaw_r; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> verr_l; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> verr_r; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> verr_l_pre; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> verr_r_pre; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> yaw_err; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> verr_l_sum; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> verr_r_sum; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> verr_l_diff; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> verr_r_diff; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//メソッド</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"></span>    <a class="code" href="class_run_control_e_v3.html">RunControlEV3</a>(){</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">//インスタンス生成時の初期値を設定</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        r = 55.0; <span class="comment">//タイヤの半径を設定</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        vref_l = 40; <span class="comment">//左タイヤの目標値[mm/sec]</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        vref_r = 40; <span class="comment">//右タイヤの目標値[mm/sec]</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        yawref = 0.0; <span class="comment">//ヨー角の初期値</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        kp_l = 0.01; ki_l = 0.1; kd_l = 0.1; kyaw_l = 0.1; <span class="comment">//左モーターのゲインの初期値</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        kp_r = 0.01; ki_r = 0.1; kd_r = 0.1; kyaw_r = 0.1; <span class="comment">//右モーターのゲインの初期値</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_run_control_e_v3.html#aeb71833e9b3dd3871fc61162b0b033b5">   65</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_run_control_e_v3.html#aeb71833e9b3dd3871fc61162b0b033b5">CalculateInputValue</a>(<span class="keywordtype">double</span> velocity, <span class="keywordtype">double</span> yaw){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_run_control_e_v3.html#aa497a02d040094b3a73ebaee31469f54">flag_once</a> == <span class="keyword">false</span>)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">//1回目の入力．目標速度vref_lから目標角速度uは，タイヤの半径をrとすると，</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="comment">//u = vref*360/2πrで求められる．</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="comment">//System.out.println(&quot;==================================================&quot;);</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            verr_l_sum = 0.0; <span class="comment">//verr_lの総和の初期値</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            verr_r_sum = 0.0; <span class="comment">//verr_rの総和の初期値</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            verr_l_pre = 0.0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            verr_r_pre = 0.0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            verr_l_diff = 0.0; <span class="comment">//verr_lの差の初期値</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            verr_r_diff = 0.0; <span class="comment">//verr_rの差の初期値</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="class_run_control_e_v3.html#a31adcc7284b47f38641a8e735c651ac7">ul</a> = (int)((velocity*360.0) / (2.0*Math.PI*r)); <span class="comment">//1回目の入力</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="class_run_control_e_v3.html#ae74b60d3e2a26e4982778d8c2bf37aee">ur</a> = (int)((velocity*360.0) / (2.0*Math.PI*r)); <span class="comment">//1回目の入力</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            System.out.println(<span class="stringliteral">&quot;ul =&gt; &quot;</span> + <a class="code" href="class_run_control_e_v3.html#a31adcc7284b47f38641a8e735c651ac7">ul</a> + <span class="stringliteral">&quot; ur =&gt; &quot;</span> + <a class="code" href="class_run_control_e_v3.html#ae74b60d3e2a26e4982778d8c2bf37aee">ur</a>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="class_run_control_e_v3.html#aa497a02d040094b3a73ebaee31469f54">flag_once</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            verr_l = vref_l - velocity; <span class="comment">//現在の速度と入力で与えている速度の誤差を計算(左)</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            verr_r = vref_r - velocity; <span class="comment">//現在の速度と入力で与えている速度の誤差を計算(右)</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            verr_l_sum += verr_l; <span class="comment">//左モーターの速度の誤差を足していく</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            verr_r_sum += verr_r; <span class="comment">//右モーターの速度の誤差を足していく</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            verr_l_diff = verr_l - verr_l_pre;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            verr_r_diff = verr_r - verr_r_pre;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="comment">//System.out.println(&quot;verr_diff &quot; + verr_l_diff);</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            verr_l_pre = verr_l;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            verr_r_pre = verr_r;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            yaw_err = yawref - yaw; <span class="comment">//ヨー角の誤差</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="comment">//最終的に与える入力値</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <a class="code" href="class_run_control_e_v3.html#a31adcc7284b47f38641a8e735c651ac7">ul</a> = (int)(kp_l*verr_l + ki_l*verr_l_sum + kd_l*verr_l_diff - kyaw_l*yaw_err); <span class="comment">//モーターA(左)</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="class_run_control_e_v3.html#ae74b60d3e2a26e4982778d8c2bf37aee">ur</a> = (int)(kp_r*verr_r + ki_r*verr_r_sum + kd_r*verr_r_diff + kyaw_r*yaw_err); <span class="comment">//モーターB(右)</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            System.out.println(<span class="stringliteral">&quot;ul =&gt; &quot;</span> + <a class="code" href="class_run_control_e_v3.html#a31adcc7284b47f38641a8e735c651ac7">ul</a> + <span class="stringliteral">&quot; ur =&gt; &quot;</span> + <a class="code" href="class_run_control_e_v3.html#ae74b60d3e2a26e4982778d8c2bf37aee">ur</a>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="class_run_control_e_v3.html#ac0a9a8fdc0f56959c95a06515741ed00">  106</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_run_control_e_v3.html#ac0a9a8fdc0f56959c95a06515741ed00">ControlEV3</a>(String args[]) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        Motor.A.setSpeed(<a class="code" href="class_run_control_e_v3.html#a31adcc7284b47f38641a8e735c651ac7">ul</a>); <span class="comment">//計算によって求めた入力値をモーターAに与える</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        Motor.B.setSpeed(<a class="code" href="class_run_control_e_v3.html#ae74b60d3e2a26e4982778d8c2bf37aee">ur</a>); <span class="comment">//計算によって求めた入力値をモーターBに与える</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        Motor.A.forward(); <span class="comment">//モーターAを動かす</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        Motor.B.forward(); <span class="comment">//モーターBを動かす</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="comment">//モーターの角速度を取得する</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="class_run_control_e_v3.html#abf9d83adb525b4201e389d54b9db1522">ul_real</a> = Motor.A.getRotationSpeed(); <span class="comment">//実際に動いているモーターAの値を取得する</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="class_run_control_e_v3.html#a67525ab959466f99029c7d8659d2f5e4">ur_real</a> = Motor.B.getRotationSpeed(); <span class="comment">//実際に動いているモーターBの値を取得する</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="comment">//System.out.println(&quot;getA &quot; + a_motorspeed); //角煮に尿</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="comment">//System.out.println(&quot;getB &quot; + b_motorspeed); //確認用</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="ttc" id="class_run_control_e_v3_html"><div class="ttname"><a href="class_run_control_e_v3.html">RunControlEV3</a></div><div class="ttdoc">EV3の走行制御クラス </div><div class="ttdef"><b>Definition:</b> <a href="_run_control_e_v3_8java_source.html#l00020">RunControlEV3.java:20</a></div></div>
+<div class="ttc" id="class_run_control_e_v3_html_abf9d83adb525b4201e389d54b9db1522"><div class="ttname"><a href="class_run_control_e_v3.html#abf9d83adb525b4201e389d54b9db1522">RunControlEV3.ul_real</a></div><div class="ttdeci">static int ul_real</div><div class="ttdoc">モーターA(左)の実際の角速度 </div><div class="ttdef"><b>Definition:</b> <a href="_run_control_e_v3_8java_source.html#l00024">RunControlEV3.java:24</a></div></div>
+<div class="ttc" id="class_run_control_e_v3_html_aeb71833e9b3dd3871fc61162b0b033b5"><div class="ttname"><a href="class_run_control_e_v3.html#aeb71833e9b3dd3871fc61162b0b033b5">RunControlEV3.CalculateInputValue</a></div><div class="ttdeci">void CalculateInputValue(double velocity, double yaw)</div><div class="ttdoc">左右モーターの入力を計算するメソッド(要修正) </div><div class="ttdef"><b>Definition:</b> <a href="_run_control_e_v3_8java_source.html#l00065">RunControlEV3.java:65</a></div></div>
+<div class="ttc" id="class_run_control_e_v3_html_ac0a9a8fdc0f56959c95a06515741ed00"><div class="ttname"><a href="class_run_control_e_v3.html#ac0a9a8fdc0f56959c95a06515741ed00">RunControlEV3.ControlEV3</a></div><div class="ttdeci">void ControlEV3(String args[])</div><div class="ttdoc">実際に入力を与えEV3を走行させるメソッド </div><div class="ttdef"><b>Definition:</b> <a href="_run_control_e_v3_8java_source.html#l00106">RunControlEV3.java:106</a></div></div>
+<div class="ttc" id="class_run_control_e_v3_html_a67525ab959466f99029c7d8659d2f5e4"><div class="ttname"><a href="class_run_control_e_v3.html#a67525ab959466f99029c7d8659d2f5e4">RunControlEV3.ur_real</a></div><div class="ttdeci">static int ur_real</div><div class="ttdoc">モーターB(右)の実際の角速度 </div><div class="ttdef"><b>Definition:</b> <a href="_run_control_e_v3_8java_source.html#l00025">RunControlEV3.java:25</a></div></div>
+<div class="ttc" id="class_run_control_e_v3_html_a31adcc7284b47f38641a8e735c651ac7"><div class="ttname"><a href="class_run_control_e_v3.html#a31adcc7284b47f38641a8e735c651ac7">RunControlEV3.ul</a></div><div class="ttdeci">static int ul</div><div class="ttdoc">現在のモーターA(左)の角速度 </div><div class="ttdef"><b>Definition:</b> <a href="_run_control_e_v3_8java_source.html#l00022">RunControlEV3.java:22</a></div></div>
+<div class="ttc" id="class_run_control_e_v3_html_aa497a02d040094b3a73ebaee31469f54"><div class="ttname"><a href="class_run_control_e_v3.html#aa497a02d040094b3a73ebaee31469f54">RunControlEV3.flag_once</a></div><div class="ttdeci">static boolean flag_once</div><div class="ttdoc">1回目の処理をチェックするためのフラグ </div><div class="ttdef"><b>Definition:</b> <a href="_run_control_e_v3_8java_source.html#l00028">RunControlEV3.java:28</a></div></div>
+<div class="ttc" id="class_run_control_e_v3_html_ae74b60d3e2a26e4982778d8c2bf37aee"><div class="ttname"><a href="class_run_control_e_v3.html#ae74b60d3e2a26e4982778d8c2bf37aee">RunControlEV3.ur</a></div><div class="ttdeci">static int ur</div><div class="ttdoc">現在のモーターB(右)の角速度 </div><div class="ttdef"><b>Definition:</b> <a href="_run_control_e_v3_8java_source.html#l00023">RunControlEV3.java:23</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_89db577aa88594a56b7cb95279b1a768.html">eclipse</a></li><li class="navelem"><a class="el" href="dir_bb2be7f70403c819abfff8b86e9072f9.html">workspace</a></li><li class="navelem"><a class="el" href="dir_4c288b4294462ace490dd5a7120a1848.html">EV3ControlClient</a></li><li class="navelem"><a class="el" href="dir_c0af180523a0180a216dc9cc61d1804d.html">src</a></li><li class="navelem"><a class="el" href="_run_control_e_v3_8java.html">RunControlEV3.java</a></li>
+    <li class="footer">2016年01月22日(金) 22時34分29秒作成 - EV3ControlClient / 構成: 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

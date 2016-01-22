@@ -1,6 +1,8 @@
-/*
- * RunControlEV3.java
- * EV3の走行を制御するクラス
+/*!
+ * @file RunControlEV3.java
+ * @brief EV3の走行を制御するクラス
+ * @date 2016.01.05
+ * @author H.Shigehara
  */
 import lejos.hardware.motor.Motor; //モーターの設定
 //import lejos.hardware.port.SensorPort; //センサーポートの設定
@@ -10,38 +12,40 @@ import lejos.hardware.motor.Motor; //モーターの設定
 import java.lang.Math;
 
 //クラスの定義
-//Aが左のモーターl，Bが右のモーターr
+/*!
+ * @class RunControlEV3
+ * @brief EV3の走行制御クラス
+ * @brief Aが左のモーターl，Bが右のモーターr
+ */
 public class RunControlEV3 {
 	//変数
-	public static int ul; //現在のモーターA(左)の角速度
-	public static int ur; //現在のモーターB(右)の角速度
-	public static int ul_real; //モーターA(左)の実際の角速度
-	public static int ur_real; //モーターB(右)の実際の角速度
+	public static int ul; //!<現在のモーターA(左)の角速度
+	public static int ur; //!<現在のモーターB(右)の角速度
+	public static int ul_real; //!<モーターA(左)の実際の角速度
+	public static int ur_real; //!<モーターB(右)の実際の角速度
 	
 	//入力値を計算するための変数
-	public static boolean flag_once; //1回目の処理をチェックするためのフラグ
-	double r; //タイヤの半径
-	int vref_l; //速度の目標値(左)
-	int vref_r; //速度の目標値(右)
-	double yawref; //ヨー角の目標値
-	int ulref;
-	int urref;
-	double kp_l, ki_l, kd_l, kyaw_l; //各ゲイン(左モーター)
-	double kp_r, ki_r, kd_r, kyaw_r; //各ゲイン(右モーター)
-	static double verr_l; //速度の誤差(左モーター)
-	static double verr_r; //速度の誤差(右モーター)
-	static double verr_l_pre; //前フレームの速度の誤差(左モーター)
-	static double verr_r_pre; //前フレームの速度の誤差(右モーター)
-	static double yaw_err; //ヨー角の誤差
-	static double verr_l_sum; //verr_lの総和
-	static double verr_r_sum; //verr_rの総和
-	static double verr_l_diff; //verr_lの差
-	static double verr_r_diff; //verr_rの差
-		
-	static float distance = 1;
+	public static boolean flag_once; //!<1回目の処理をチェックするためのフラグ
+	double r; //!<タイヤの半径
+	int vref_l; //!<速度の目標値(左)
+	int vref_r; //!<速度の目標値(右)
+	double yawref; //!<ヨー角の目標値
+	double kp_l, ki_l, kd_l, kyaw_l; //!<各ゲイン(左モーター)
+	double kp_r, ki_r, kd_r, kyaw_r; //!<各ゲイン(右モーター)
+	static double verr_l; //!<速度の誤差(左モーター)
+	static double verr_r; //!<速度の誤差(右モーター)
+	static double verr_l_pre; //!<前フレームの速度の誤差(左モーター)
+	static double verr_r_pre; //!<前フレームの速度の誤差(右モーター)
+	static double yaw_err; //!<ヨー角の誤差
+	static double verr_l_sum; //!<verr_lの総和
+	static double verr_r_sum; //!<verr_rの総和
+	static double verr_l_diff; //!<verr_lの差
+	static double verr_r_diff; //!<verr_rの差
 	
 	//メソッド
-	//コンストラクタ
+	/*!
+	 * @brief コンストラクタ
+	 */
 	RunControlEV3(){
 		//インスタンス生成時の初期値を設定
 		r = 55.0; //タイヤの半径を設定
@@ -55,7 +59,11 @@ public class RunControlEV3 {
 		kp_r = 0.01; ki_r = 0.1; kd_r = 0.1; kyaw_r = 0.1; //右モーターのゲインの初期値
 	}
 	
-	//左右モーターの入力を計算するメソッド(要修正)
+	/*!
+	 * @brief 左右モーターの入力を計算するメソッド(要修正)
+	 * @param velocity 速度
+	 * @param yaw ヨー角
+	 */
 	public void CalculateInputValue(double velocity, double yaw){
 		if(flag_once == false)
 		{
@@ -94,8 +102,10 @@ public class RunControlEV3 {
 		}
 	}
 	
-	//実際に入力を与えEV3を走行させるメソッド
-	public void ControlEV3(String args[]) {
+	/*!
+	 * @brief 実際に入力を与えEV3を走行させるメソッド
+	 */
+	public void ControlEV3() {
    		Motor.A.setSpeed(ul); //計算によって求めた入力値をモーターAに与える
         Motor.B.setSpeed(ur); //計算によって求めた入力値をモーターBに与える
         Motor.A.forward(); //モーターAを動かす

@@ -1,0 +1,161 @@
+\section{Run\-Control\-E\-V3 クラス}
+\label{class_run_control_e_v3}\index{Run\-Control\-E\-V3@{Run\-Control\-E\-V3}}
+
+
+E\-V3の走行制御クラス  
+
+
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Calculate\-Input\-Value} (double velocity, double yaw)
+\begin{DoxyCompactList}\small\item\em 左右モーターの入力を計算するメソッド(要修正) \end{DoxyCompactList}\item 
+void {\bf Control\-E\-V3} (String args[$\,$])
+\begin{DoxyCompactList}\small\item\em 実際に入力を与え\-E\-V3を走行させるメソッド \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{静的公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bf ul}
+\begin{DoxyCompactList}\small\item\em 現在のモーター\-A(左)の角速度 \end{DoxyCompactList}\item 
+static int {\bf ur}
+\begin{DoxyCompactList}\small\item\em 現在のモーター\-B(右)の角速度 \end{DoxyCompactList}\item 
+static int {\bf ul\-\_\-real}
+\begin{DoxyCompactList}\small\item\em モーター\-A(左)の実際の角速度 \end{DoxyCompactList}\item 
+static int {\bf ur\-\_\-real}
+\begin{DoxyCompactList}\small\item\em モーター\-B(右)の実際の角速度 \end{DoxyCompactList}\item 
+static boolean {\bf flag\-\_\-once}
+\begin{DoxyCompactList}\small\item\em 1回目の処理をチェックするためのフラグ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+E\-V3の走行制御クラス 
+
+Aが左のモーターl，\-Bが右のモーターr 
+
+ Run\-Control\-E\-V3.\-java の 20 行目に定義があります。
+
+
+
+\subsection{メソッド詳解}
+\index{Run\-Control\-E\-V3@{Run\-Control\-E\-V3}!Calculate\-Input\-Value@{Calculate\-Input\-Value}}
+\index{Calculate\-Input\-Value@{Calculate\-Input\-Value}!RunControlEV3@{Run\-Control\-E\-V3}}
+\subsubsection[{Calculate\-Input\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void Run\-Control\-E\-V3.\-Calculate\-Input\-Value (
+\begin{DoxyParamCaption}
+\item[{double}]{velocity, }
+\item[{double}]{yaw}
+\end{DoxyParamCaption}
+)}\label{class_run_control_e_v3_aeb71833e9b3dd3871fc61162b0b033b5}
+
+
+左右モーターの入力を計算するメソッド(要修正) 
+
+
+
+ Run\-Control\-E\-V3.\-java の 65 行目に定義があります。
+
+
+
+参照先 flag\-\_\-once, ul, ur.
+
+\index{Run\-Control\-E\-V3@{Run\-Control\-E\-V3}!Control\-E\-V3@{Control\-E\-V3}}
+\index{Control\-E\-V3@{Control\-E\-V3}!RunControlEV3@{Run\-Control\-E\-V3}}
+\subsubsection[{Control\-E\-V3}]{\setlength{\rightskip}{0pt plus 5cm}void Run\-Control\-E\-V3.\-Control\-E\-V3 (
+\begin{DoxyParamCaption}
+\item[{String}]{args[$\,$]}
+\end{DoxyParamCaption}
+)}\label{class_run_control_e_v3_ac0a9a8fdc0f56959c95a06515741ed00}
+
+
+実際に入力を与え\-E\-V3を走行させるメソッド 
+
+
+
+ Run\-Control\-E\-V3.\-java の 106 行目に定義があります。
+
+
+
+参照先 ul, ul\-\_\-real, ur, ur\-\_\-real.
+
+
+
+\subsection{メンバ詳解}
+\index{Run\-Control\-E\-V3@{Run\-Control\-E\-V3}!flag\-\_\-once@{flag\-\_\-once}}
+\index{flag\-\_\-once@{flag\-\_\-once}!RunControlEV3@{Run\-Control\-E\-V3}}
+\subsubsection[{flag\-\_\-once}]{\setlength{\rightskip}{0pt plus 5cm}boolean Run\-Control\-E\-V3.\-flag\-\_\-once\hspace{0.3cm}{\ttfamily [static]}}\label{class_run_control_e_v3_aa497a02d040094b3a73ebaee31469f54}
+
+
+1回目の処理をチェックするためのフラグ 
+
+
+
+ Run\-Control\-E\-V3.\-java の 28 行目に定義があります。
+
+
+
+参照元 Calculate\-Input\-Value().
+
+\index{Run\-Control\-E\-V3@{Run\-Control\-E\-V3}!ul@{ul}}
+\index{ul@{ul}!RunControlEV3@{Run\-Control\-E\-V3}}
+\subsubsection[{ul}]{\setlength{\rightskip}{0pt plus 5cm}int Run\-Control\-E\-V3.\-ul\hspace{0.3cm}{\ttfamily [static]}}\label{class_run_control_e_v3_a31adcc7284b47f38641a8e735c651ac7}
+
+
+現在のモーター\-A(左)の角速度 
+
+
+
+ Run\-Control\-E\-V3.\-java の 22 行目に定義があります。
+
+
+
+参照元 Calculate\-Input\-Value(), Control\-E\-V3().
+
+\index{Run\-Control\-E\-V3@{Run\-Control\-E\-V3}!ul\-\_\-real@{ul\-\_\-real}}
+\index{ul\-\_\-real@{ul\-\_\-real}!RunControlEV3@{Run\-Control\-E\-V3}}
+\subsubsection[{ul\-\_\-real}]{\setlength{\rightskip}{0pt plus 5cm}int Run\-Control\-E\-V3.\-ul\-\_\-real\hspace{0.3cm}{\ttfamily [static]}}\label{class_run_control_e_v3_abf9d83adb525b4201e389d54b9db1522}
+
+
+モーター\-A(左)の実際の角速度 
+
+
+
+ Run\-Control\-E\-V3.\-java の 24 行目に定義があります。
+
+
+
+参照元 Control\-E\-V3().
+
+\index{Run\-Control\-E\-V3@{Run\-Control\-E\-V3}!ur@{ur}}
+\index{ur@{ur}!RunControlEV3@{Run\-Control\-E\-V3}}
+\subsubsection[{ur}]{\setlength{\rightskip}{0pt plus 5cm}int Run\-Control\-E\-V3.\-ur\hspace{0.3cm}{\ttfamily [static]}}\label{class_run_control_e_v3_ae74b60d3e2a26e4982778d8c2bf37aee}
+
+
+現在のモーター\-B(右)の角速度 
+
+
+
+ Run\-Control\-E\-V3.\-java の 23 行目に定義があります。
+
+
+
+参照元 Calculate\-Input\-Value(), Control\-E\-V3().
+
+\index{Run\-Control\-E\-V3@{Run\-Control\-E\-V3}!ur\-\_\-real@{ur\-\_\-real}}
+\index{ur\-\_\-real@{ur\-\_\-real}!RunControlEV3@{Run\-Control\-E\-V3}}
+\subsubsection[{ur\-\_\-real}]{\setlength{\rightskip}{0pt plus 5cm}int Run\-Control\-E\-V3.\-ur\-\_\-real\hspace{0.3cm}{\ttfamily [static]}}\label{class_run_control_e_v3_a67525ab959466f99029c7d8659d2f5e4}
+
+
+モーター\-B(右)の実際の角速度 
+
+
+
+ Run\-Control\-E\-V3.\-java の 25 行目に定義があります。
+
+
+
+参照元 Control\-E\-V3().
+
+
+
+このクラス詳解は次のファイルから抽出されました\-:\begin{DoxyCompactItemize}
+\item 
+{\bf Run\-Control\-E\-V3.\-java}\end{DoxyCompactItemize}

@@ -1,6 +1,8 @@
-/*
- * TimeSchedulingClient.java
- * クライアント(EV3)側の時間をスケジューリングするクラス．
+/*!
+ * @file RunClient.java
+ * @brief クライアント(EV3)側の時間をスケジューリングするクラス．
+ * @date 2016.01.05
+ * @author H.Shigehara
  */
 //インポート
 import java.io.File;
@@ -10,26 +12,34 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 //クラスの定義
+/*!
+ * @class RunClient
+ * @brief クライアント側で連続で行う処理を記述したクラス
+ */
 public class RunClient extends TimerTask{
 	//変数
-    private long timeStart; //タイマー用の変数
+    private long timeStart; //!<タイマー用の変数
 
     //メソッド
-    //コンストラクタ
+    /*!
+     * @brief コンストラクタ
+     */
     RunClient(){
     	timeStart = System.nanoTime();
     }
 
-    //run()．処理の流れをここに書く
+    /*!
+     * @brief 処理の流れをここに書く
+     */
     public void run(){
     	long timeNow = System.nanoTime() - timeStart;
     	System.out.println("Time : " + TimeUnit.MILLISECONDS.convert(timeNow, TimeUnit.NANOSECONDS));
     	
     	SocketClient sc = new SocketClient(); //インスタンスを生成
     	RunControlEV3 rcev3 = new RunControlEV3(); //インスタンスを生成
-    	sc.ReceiveData(null); //データを受信
+    	sc.ReceiveData(); //データを受信
     	rcev3.CalculateInputValue(sc.velocity, sc.yaw); //EV3の走行制御クラスに速度とヨー角を渡す
-    	rcev3.ControlEV3(null); //EV3を走行させる
+    	rcev3.ControlEV3(); //EV3を走行させる
     	//System.out.println(TimeUnit.MILLISECONDS.convert(timeNow, TimeUnit.NANOSECONDS) + " " + rcev3.ua_current + " " + rcev3.ub_current + " " + rcev3.ua_real + " " + rcev3.ub_real); //確認用に表示
     	
     	//ファイルに書き込む

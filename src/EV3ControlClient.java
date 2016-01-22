@@ -1,20 +1,26 @@
-/*
- * EV3ControlClient.java
- * EV3を制御するクライアント(EV3)側のメインクラス．
+/*!
+ * @file EV3ControlClient.java
+ * @brief EV3を制御するクライアント(EV3)側のメインクラス．
+ * @date 2016.01.05
+ * @author H.Shigehara
  */
 //インポート
 import java.util.Timer;
 
 //クラスの定義
+/*!
+ * @class EV3ControlClient
+ * @brief クライアント側のメインの処理クラス
+ */
 public class EV3ControlClient{
-	//メインメソッド
+	/*!
+	 * @brief メインメソッド
+	 */
     public static void main(String[] args){
     	Timer timer = new Timer(); //タイマーtimerのインスタンスを生成
 
     	//連続処理を行う前にコネクションをはる
-    	//SocketClient sc = new SocketClient();
-    	//sc.MakeConnection(null);
-    	SocketClient.MakeConnection(null); 
+    	SocketClient.MakeConnection(); 
     	
     	//1回目の処理のフラグを設定
     	RunControlEV3.flag_once = false; //1回目なのでフラグをfalseにしておく
